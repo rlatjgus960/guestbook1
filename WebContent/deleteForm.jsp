@@ -5,15 +5,7 @@
 <%@ page import="com.javaex.vo.GuestbookVo" %>
     
 <%
-	GuestbookDao guestbookDao = new GuestbookDao();
-
-	String no = request.getParameter("id");
-	int guestbookNo = Integer.parseInt(no);
-	System.out.println(guestbookNo);
-
-	GuestbookVo guestbookVo = guestbookDao.getGuestbook(guestbookNo);
-	System.out.println(guestbookVo.toString());
-
+	int no = Integer.parseInt(request.getParameter("id"));
 %>
    
 <!DOCTYPE html>
@@ -25,7 +17,7 @@
 <body>
 
 	<form action ="./delete.jsp" method="post">
-		<input type="hidden" name="no" value="<%=guestbookVo.getNo() %>">
+		<input type="hidden" name="no" value="<%=no %>">
 		비밀번호<input type="text" name="password" value="">
 		<button type="submit">확인</button>
 	</form>
