@@ -169,47 +169,6 @@ public class GuestbookDao {
 	}
 	
 	
-	//한개 정보
-	public GuestbookVo getGuestbook(int guestbookNo) {
-		int count = 0;
-		getConnection();
-		GuestbookVo guestbookVo = null;
-		
-		try {
-			String query = "";
-			query += " select  no, ";
-			query += "         name, ";
-			query += "         password, ";
-			query += "         content, ";
-			query += "         reg_date ";
-			query += " from  guestbook ";
-			query += " where  no = ? ";
-			
-			pstmt = conn.prepareStatement(query);
-			pstmt.setInt(1, guestbookNo);
-		
-			rs = pstmt.executeQuery();
-			
-			
-			//결과처리
-			while(rs.next()) {
-				int no = rs.getInt("no");
-				String name = rs.getString("name");
-				String password = rs.getString("password");
-				String content = rs.getString("content");
-				String regDate = rs.getString("reg_date");
-				
-				guestbookVo = new GuestbookVo(no, name, password, content, regDate);
-			}
-			
-		} catch (SQLException e) {
-			System.out.println("error:" + e);
-		}
-		
-		return guestbookVo;
-	}
-	
-
 
 	
 }
