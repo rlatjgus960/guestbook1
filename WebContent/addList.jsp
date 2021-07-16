@@ -6,14 +6,11 @@
 <%@ page import="com.javaex.vo.GuestbookVo" %>    
     
 <%
-
-	GuestbookDao guestbookDao = new GuestbookDao();
-	List<GuestbookVo> guestbookList = guestbookDao.getGuestbookList();
-	
-	System.out.println(guestbookList.toString());
-
-
-%>    
+        GuestbookDao guestbookDao = new GuestbookDao();
+                	List<GuestbookVo> guestbookList = guestbookDao.getGuestbookList();
+                	
+                	System.out.println(guestbookList.toString());
+        %>    
     
 <!DOCTYPE html>
 <html>
