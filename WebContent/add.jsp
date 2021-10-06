@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
     
 <%@page import="java.util.List" %>  
-   
+ 
 <%@ page import = "com.javaex.dao.GuestbookDao" %> 
 <%@ page import = "com.javaex.vo.GuestbookVo" %>
     
